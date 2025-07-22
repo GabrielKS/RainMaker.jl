@@ -20,7 +20,6 @@ using OptimizationOptimJL
 using Flux
 using SpeedyWeather
 using RainMaker
-using RainMakerChallenge2025
 using Logging
 
 minmaxnorm(data, lb, ub, norm_min=0., norm_max=1.) = @. norm_min + (data - lb) * (norm_max - norm_min) / (ub - lb)
@@ -171,17 +170,17 @@ function max_precipitation(parameters::NamedTuple)
 end
 
 final_params = 
-[2.0163488388061523,
- 5013.733625411987,
- -0.017316662706434727,
- -22.202972173690796,
- -19.587678909301758,
- 282.97233670949936,
- 300.200936794281,
- 2.133525013923645,
- 4.704113602638245,
- 34.923005402088165]
+[2.0163443088531494,
+ 5013.755321502686,
+ -0.01729382376652211,
+ -22.064194679260254,
+ -19.635765552520752,
+ 282.96871304512024,
+ 300.20092964172363,
+ 2.1322375535964966,
+ 4.700601100921631,
+ 34.92016762495041]
 
 rain_gauge, total_precip = max_precipitation(final_params)
 
-total_precip  # produces 212.7933 on RainMakerChallenge2025.jl's evaluator, 211.040 on this evaluator -- TODO investigate the discrepancy
+total_precip  # 212.2994
