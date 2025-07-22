@@ -118,6 +118,7 @@ open(joinpath(@__DIR__, "src/leaderboard.md"), "w") do mdfile
                 total_precip = @sprintf("%.3f", dict["total precipitation"])
                 convection_share = @sprintf("%.1f", 100*dict["convection share"])
                 n_days = @sprintf("%d", Second(dict["period"]).value / 24 / 3600)   # rounded
+                println("| $rank | $author | $description | $location | $total_precip | $convection_share | $n_days |")
                 println(mdfile, "| $rank | $author | $description | $location | $total_precip | $convection_share | $n_days |")
             end
         end
